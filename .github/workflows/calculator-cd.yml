@@ -5,6 +5,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: write   # REQUIRED to create GitHub releases
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,17 +29,13 @@ jobs:
       - name: Build package
         run: python -m build
 
-      - name: Debug dist directory
-        run: |
-          echo "PWD:"
-          pwd
-          echo "Files:"
-          ls -la
-          echo "Dist contents:"
-          ls -la dist
-
-      - name: Upload build artifacts
+      - name: Upload build artifacts (CI storage)
         uses: actions/upload-artifact@v4
         with:
           name: python-package
           path: dist/
+
+      - name: Create GitHub Release and attach package
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
