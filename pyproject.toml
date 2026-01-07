@@ -1,9 +1,16 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "automate"
 version = "0.1.0"
 description = "Toy calculator project for learning CI/CD"
-authors = [{ name = "Muhammad Dawood" }]
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+  { name = "Muhammad Dawood" }
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
