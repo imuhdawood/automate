@@ -67,6 +67,14 @@ The CI pipeline fails if any test fails.
 
 ---
 
+### Tagging the release
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+
+```
+
 ## Notes
 
 This is a **learning and experimentation project** intended for hands-on practice with Python testing and CI/CD concepts.
