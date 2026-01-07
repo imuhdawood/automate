@@ -22,7 +22,7 @@ class TestCalculator(unittest.TestCase):
 
     def test_divide(self):
         """Verify division with a non-zero divisor."""
-        self.assertEqual(self.calc.divide(10, 0), 5)
+        self.assertEqual(self.calc.divide(10, 2), 5)
 
     def test_divide_by_zero(self):
         """Ensure division by zero raises ValueError."""
